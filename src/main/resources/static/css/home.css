@@ -1,0 +1,73 @@
+
+body{
+  background-color: #f2f2f2;
+  color:#b71c1c;
+}
+.text-center{
+	color:#b71c1c;
+}
+
+img.navbar-brand{
+	width: 10%;
+}
+
+ul.navbar-nav{
+	color:#b71c1c;
+	margin-left:auto;
+	font: Montserrat 150%;		
+}
+
+.navbar-light .navbar-nav .nav-link {
+color:#b71c1c;
+font: Montserrat 150%;
+}
+
+.navbar-light .navbar-nav .active>.nav-link  {
+color:#b71c1c;
+font: Montserrat 150%;
+}
+
+.carousel .carousel-item {
+    width: 100%;
+    height: 90.5vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel .carousel-item:first-of-type {
+    background-image: url("https://fotos.subefotos.com/02c6b9ed2f874b2e8458765d5e11caddo.jpg");
+
+}
+
+.carousel .carousel-item:nth-of-type(2) {
+    background-image: url("https://fotos.subefotos.com/e1d38e25f15cd8e05db2569d8adfdcdbo.jpg");
+}
+
+.carousel .carousel-item:last-of-type {
+    background-image: url("https://fotos.subefotos.com/2c350f61335e78d583567a697d079bbfo.jpg");
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.btn-primary{
+	width:100%;
+	color:#b71c1c;
+    border-color:#b71c1c;
+    background:#f2f2f2;}
+
+.btn-primary:hover{
+    background:#b71c1c;
+    color:#f2f2f2;
+    border-color:#b71c1c;} 
+    
+.btn-primary2{
+color:#b71c1c;
+    border-color:#b71c1c;
+    background:#f2f2f2;}
+.btn-primary2:hover{
+    background:#b71c1c;
+    color:#f2f2f2;
+    border-color:#b71c1c;}

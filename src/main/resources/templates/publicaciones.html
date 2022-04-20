@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<title>Donalo Publicaciones</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/publicaciones.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+ <link rel="shortcut icon"  href="https://i.ibb.co/3Yn1Q9X/favicon.png" type="image/png">
+    
+<style>
+/* Este es para los elementos en general */
+.navbar-light .navbar-nav .nav-link {
+color:#b71c1c;
+font: Montserrat 150%;
+
+}
+/*  Este es para el elemento activo lo puedes omitir */
+.navbar-light .navbar-nav .active>.nav-link  {
+color:#b71c1c;
+font: Montserrat 150%;
+}
+.row{
+max-width: 30%;
+    max-height: 30%;
+}
+
+.card-body img{
+max-width: 350px;
+    max-height: 350px;
+    min-width: 350px;
+    min-height: 350px;
+}
+</style>
+</head>
+
+
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<img class="navbar-brand" 
+  src="https://fotos.subefotos.com/987390e9e8bcebd33c8a39765a9f637co.png">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav" ml-auto mt-lg-0>
+			    <li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#"
+					id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"></a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						
+					<a class="dropdown-item" href="/logout"; style=color:#b71c1c;>Cerrar sesión</a> 
+						
+					</div></li>
+				<li class="nav-item active"><a class="nav-link" href="/">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					href="/registro/formulario">Registro</a></li>
+				<li class="nav-item"><a class="nav-link" href="/login">LogIn</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<body>
+	<p th:if="${error != null}" th:text="${error}" style="color: red;"></p>
+
+	 <form class="form-inline my-2 my-lg-0" action="/publicacion/publicaciones" method="GET">
+		
+		<input class="form-control mr-sm-2" type="search" placeholder="Buscar"
+			aria-label="Buscar" name="q" th:value="${q}">
+		<button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Buscar <i class="fa fa-search"></i>
+	    </button>
+	</form>
+
+	<section class="vip-products">
+		<div class="publicaciones">
+			<div class="row" th:each="publicacion : ${publicaciones}">
+				<div class="card-body">
+					<img th:src="@{/img/__${publicacion.foto.id}__}" class="w-100">
+					<h5 class="card-title" th:text="${publicacion.titulo}" style=color:#b71c1c;>Product
+						Name</h5>
+					<p class="card-text" th:text="${publicacion.descripcion}" style=color:#b71c1c;>Product
+						Description</p>
+						   
+					<a th:href="@{/publicacion/detalle(id=${publicacion.id})}" class="btn btn-outline-success w-100">Ver Publicacion</a>
+				</div>
+			</div>
+		</div>
+	</section> 
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="/js/carrousel.js"></script>
+	<script>
+		$('div.carousel-item:first').addClass('active');
+	</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Donalo Publicar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <link rel="shortcut icon" 
+    href="https://i.ibb.co/3Yn1Q9X/favicon.png" type="image/png">
+ 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img class="navbar-brand" src="https://fotos.subefotos.com/987390e9e8bcebd33c8a39765a9f637co.png">
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav" ml-auto mt-lg-0>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+           <li class="nav-item">
+             <a class="nav-link" href="/perfil">Perfil</a>
+           </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>      
+        			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        				<a class="dropdown-item" href="/logout"; style=color:#b71c1c;>Cerrar sesión</a>
+                        <a class="dropdown-item" href="/publicacion/publicaciones"; style=color:#b71c1c;>Ver Peticiones</a>
+                        <a class="dropdown-item" href="/publicacion/publicaciones"; style=color:#b71c1c;>Ver Donaciones</a>
+        			</div>
+      			</li>
+   		  </ul>
+  	  </div>
+  </nav>
+</head>
+
+  <body>
+   <section>
+     <div class="container">
+       <div class="row align-items-center">
+         <div class="col-lg-6 order-lg-2">
+           <div class="p-5">
+             <img class="img-fluid rounded-circle" src="img/m1.jpeg" alt="">
+          </div>
+        </div>
+       <div class="col-lg-6 order-lg-1">
+          <div class="p-5">
+            <h2 class="display-4">Crear tu publicación!</h2>
+            
+	<form action="/publicacion/publicar" method="POST" enctype="multipart/form-data">
+		   <p th:if="${error != null}" th:text="${error}" style="color: red;"></p>
+			
+		   <label>Titulo</label>
+		   <input type="text" class="form-control" name="titulo" th:value="${titulo}" />  <br />
+		
+		   <label>Descripcion</label>	 
+		   <textarea rows="" cols="" style="margin: 0px; height: 67px; width: 448px;"  name="descripcion" th:value="${descripcion}"></textarea><br/>
+		
+		    <label >Foto</label>
+		    <input type="file" class="form-control" name="archivo" />  <br />
+		
+		    <p >Selecciona si tu publicacion es:</p>
+			<div>
+			    <input type="radio" id="contactChoice1" name="seleccion" value="DONAR">
+			    <label for="contactChoice1" >Para Donar</label>
+			
+			    <input type="radio" id="contactChoice2" name="seleccion" value="RECIBIR">
+			    <label for="contactChoice2">Para Solicitar</label>
+			 </div>
+		
+		     <button type="submit" class="btn btn-primary2">Publicar</button>
+	</form> 
+	      </div>
+        </div>
+       </div>
+      </div>
+  </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

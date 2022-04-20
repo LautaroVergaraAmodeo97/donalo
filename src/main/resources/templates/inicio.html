@@ -1,0 +1,108 @@
+
+<?php
+
+include "conexion.php";
+
+?>
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Donalo</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<link rel="shortcut icon" href="https://i.ibb.co/3Yn1Q9X/favicon.png" type="image/png">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<img class="navbar-brand" src="https://fotos.subefotos.com/987390e9e8bcebd33c8a39765a9f637co.png" >
+	
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
+		data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav" ml-auto mt-lg-0>
+			
+			<li class="nav-item"><a class="nav-link"
+				href="/publicacion/publicaciones">Publicaciones</a></li>
+			<li class="nav-item"><a class="nav-link" href="/login">Log
+					In</a></li>
+			<li class="nav-item active"><a class="nav-link" href="/">Home
+					<span class="sr-only">(current)</span>
+			</a></li>
+<!-- 			<li class="nav-item dropdown"><a -->
+<!-- 				class="nav-link dropdown-toggle" href="#" -->
+<!-- 				id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" -->
+<!-- 				aria-haspopup="true" aria-expanded="false"></a> -->
+<!-- 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"> -->
+<!-- 					<a class="dropdown-item" href="#">Cerrar sesión</a> <a -->
+<!-- 						class="dropdown-item" href="#">Petición</a> <a -->
+<!-- 						class="dropdown-item" href="#">Donar</a> -->
+<!-- 				</div></li> -->
+		</ul>
+	</div>
+</nav>
+</head>
+<body>
+
+   <!-- Navigation -->
+<!--   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top"> -->
+<!--     <div class="container"> -->
+
+   
+<!--      <a class="navbar-brand" href="#">Donalo</a> -->
+<!--       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> -->
+<!--         <span class="navbar-toggler-icon"></span> -->
+<!--       </button> -->
+<!--       <div class="collapse navbar-collapse" id="navbarResponsive"> -->
+<!--         <ul class="navbar-nav ml-auto"> -->
+<!--           <li class="nav-item"> -->
+<!--             <a class="nav-link" href="/logout">Salir</a> -->
+<!--           </li> -->
+<!--         </ul> -->
+<!--       </div> -->
+<!--     </div> -->
+ 
+<!--   </nav> -->
+
+  <header class="masthead text-center text-white">
+    <div class="masthead-content">
+      <div class="container">
+        <h1 class="masthead-heading mb-0" style=color:#b71c1c;>Registrado con éxito!</h1>
+        <h2 class="masthead-subheading mb-0" th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre + ' ' + session.usuariosession.apellido}"></h2>
+        <a href="/perfil" class="btn btn-primary btn-xl rounded-pill mt-5">¡Configura tu Perfil!</a>
+      </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+  </header>
+
+
+  <!-- Footer -->
+  <footer class="py-5 bg-black">
+    <div class="container">
+      <p class="m-0 text-center small" >Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
